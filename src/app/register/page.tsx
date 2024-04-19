@@ -27,7 +27,8 @@ export default function FormRegister (){
    
     const Submit: SubmitHandler<FieldValues> = async(data) => {
 
-        
+        await new Promise((Resolve)=>setTimeout(Resolve,3000))
+
             if(data.password !== data.confirmPassword){
                
                 console.log('senhas não conferem')
@@ -42,16 +43,21 @@ export default function FormRegister (){
             body: JSON.stringify(data)
         })
         .then(async(resp)=>{
+            const msg = await resp.json()
             
-            console.log(await resp.json())
             if(resp.status == 200){
                 route.push('/login')
+            }
+
+            if(resp.status !== 200){
+                alert(msg.msg)
             }
            
         })
         .catch((error)=>{
             console.log(error)
-            alert('Não foi possivel criar cadastro')
+            alert('Não foi possível criar sua conta, entre em contato com o suporte!')
+            
         })
 
        
@@ -65,7 +71,6 @@ export default function FormRegister (){
             <form onSubmit={handleSubmit(Submit)}>
                 <h2>Criar Conta</h2>
                 <p>Esse serviço faz parte de uma iniciativa totalmente gratuita</p>
-
                 <label htmlFor="name">
                     <input 
                     type="text" id="name" placeholder='Nome do Condomínio' {...register("name",{required:true, })} />
@@ -88,7 +93,10 @@ export default function FormRegister (){
                 <label htmlFor="submit">
                         <input type='submit' name='submit' disabled={formState.isSubmitting} value="Acessar Conta" />
                 </label>
-                <span>Ao clicar em “Criar conta”, você concorda com os Termos de Uso e Política de Privacidade da plataforma.</span>
+                <span>Ao clicar em “Criar conta”, você concorda com os 
+                    <Link href="/termos"> Termos de Uso e Política de Privacidade </Link>
+                     da plataforma.
+                </span>
                 <span>
                     Já tem cadastro?
                         <Link href='/login'> Entre com sua conta</Link>

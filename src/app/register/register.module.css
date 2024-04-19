@@ -1,11 +1,14 @@
 .container_form{
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #F2F4F7;
+    background-color: #063378;
+    background-image: url('/bg-geo.jpg');
+    background-repeat: repeat;
+    background-size: cover;
 }
 
 .container_form h2{
@@ -14,6 +17,7 @@
 
 .container_form p{
     margin-bottom: 1.4rem;
+    line-height: 25px;
 }
 
 
@@ -59,5 +63,13 @@
 }
 
 .container_form form span{
-    font-size: 1.2rem;
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+.container_form form span a{
+    text-decoration: none;
+    color: var(--color-blue);
+    font-weight: 600;
+    font-size: 1.4rem;
 }

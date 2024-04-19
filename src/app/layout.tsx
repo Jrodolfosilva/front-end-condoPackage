@@ -1,3 +1,5 @@
+
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import  './global.css'
@@ -15,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  const auth = false
+
   return (
     <html lang="pt-br">
       <body className={inter.className}>

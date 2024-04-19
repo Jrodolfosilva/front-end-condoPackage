@@ -34,7 +34,7 @@ export default function FormLogin (){
         })
         .then(async(resp)=>{
             const msg =  await resp.json()
-            console.log(msg)
+            console.log(msg.msg)
             if(resp.status===200){
                 localStorage.setItem('token',msg.token.acess)
                 localStorage.setItem('refresh',msg.token.refresh)
@@ -42,6 +42,12 @@ export default function FormLogin (){
                 route.push('/')
 
             }
+            if(resp.status !== 200){
+                alert(`${msg.msg}`)
+            }
+        })
+        .catch((error)=>{
+            
         })
 
 
@@ -51,7 +57,7 @@ export default function FormLogin (){
         <section  className={style.container_form}>
              <form onSubmit={handleSubmit(submit)} >
                 <h2>Acessar Conta</h2>
-                <p>Esse serviço faz parte de uma iniciativa totalmente gratuita :)</p>
+                <p>Insira suas credenciais abaixo:</p>
 
                
                 <label htmlFor="email">
@@ -61,7 +67,7 @@ export default function FormLogin (){
                     <input type="password" {...register('password')} id="password" placeholder='Senha' />
                 </label>
                 <label htmlFor="submit">
-                    <input type="submit" value="Acessar Conta" disabled={formState.isSubmitting} />
+                    <input type="submit" value={formState.isSubmitting?'Acessando...':"Acessar Conta"} disabled={formState.isSubmitting} />
                 </label>
                 <span>Você ainda não tem uma conta? <Link href="/register">Criar conta</Link></span>
         </form>
