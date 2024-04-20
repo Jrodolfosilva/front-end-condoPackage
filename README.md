@@ -20,6 +20,14 @@ O **CondoPackage** foi criado para facilitar o gerenciamento de encomendas em co
 
 - **Registro das Encomendas:** Todas as encomendas registradas no sistema ficam armazenadas de forma organizada, permitindo um histórico completo de todas as entregas recebidas pelo condomínio.
 
+
+## Funcionalidades Para Adicionar
+
+- Recaptcha nos formulários
+- Envio de notificação para criação de conta
+
+
+
 ## Como Usar
 
 1. Clone o repositório do **CondoPackage**.

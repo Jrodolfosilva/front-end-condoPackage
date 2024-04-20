@@ -1,0 +1,74 @@
+.container_sideBar{
+    background-color: #fff;
+    width: 20%;
+    min-width: 30rem;
+    min-height: 100vh;
+    padding: 4rem 3rem;
+    border-right: 0.1rem solid #EFEFEF;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container_sideBar nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style: none;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.container_sideBar nav ul li{
+   
+    width: 100%;
+}
+
+.container_sideBar nav ul li a{
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    width: 100%;
+    padding: 1.4rem 2rem ;
+    border-radius: 0.8rem;
+    background-color: #EEF2FC;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+
+/**/
+
+.container_sideBar nav ul li a:hover{
+    background-color: #2563DC;
+    color: #fff;
+}
+.container_sideBar nav ul li a:hover svg path{
+    fill:#fff;
+}
+
+/**/
+
+
+.buttonSair{
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;  
+    padding: 1.4rem 2rem ;
+    border-radius: 0.8rem;
+    background-color: #FDF0EC;
+    width: 100%;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+}
+
+.buttonSair:hover{
+    background-color: rgb(246, 116, 116);
+    color: #fff;
+}
+
+.buttonSair:hover > svg path{
+    fill: #fff;
+}
