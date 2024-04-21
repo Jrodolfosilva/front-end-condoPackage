@@ -8,10 +8,10 @@ export default function ButtonSair(){
 const route = useRouter()
 function logout(){
 
-    localStorage.removeItem('token')
-    localStorage.removeItem('refresh')
+    localStorage.removeItem('usuário')
+    
 
-    alert('clicou')
+    route.push('/login')
 
 
 }

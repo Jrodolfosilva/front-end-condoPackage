@@ -40,7 +40,7 @@ export default function SideBar (){
                             </Link>
                         </li>
                         <li>
-                        <Link href="/dashborad/notificacao">
+                        <Link href="/dashboard/notificacao">
                             <IconNotify/>
                                 <span>Notificar</span>
                         </Link>

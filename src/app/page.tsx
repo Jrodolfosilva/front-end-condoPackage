@@ -1,9 +1,4 @@
 
-
-
-
-
-
 export default function Home() {
 
 

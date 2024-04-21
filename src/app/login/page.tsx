@@ -6,10 +6,25 @@ import Link from 'next/link'
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form"
 
 
-interface userLogin {
+interface IuserLogin {
     name: string,
     email: string,
     
+}
+
+interface ImessageLogin{
+    msg:string,
+    token:{
+        acess:string,
+        refresh: string
+    },
+    user:{
+        name:string,
+        phone:string,
+        email:string,
+        address:string
+    }
+
 }
 
 
@@ -20,7 +35,7 @@ export default function FormLogin (){
     const route = useRouter() 
     const { register, handleSubmit,formState} = useForm()
 
-    const submit:SubmitHandler<FieldValues> = async(data)=>{
+    const submit:SubmitHandler<FieldValues |IuserLogin > = async(data)=>{
 
         await new Promise(Resolve=>setTimeout(Resolve,3000))
         console.log(data)
@@ -33,13 +48,13 @@ export default function FormLogin (){
             body:JSON.stringify(data)
         })
         .then(async(resp)=>{
-            const msg =  await resp.json()
-            console.log(msg.msg)
+            const msg:ImessageLogin =  await resp.json()
+            console.log(msg)
             if(resp.status===200){
-                localStorage.setItem('token',msg.token.acess)
-                localStorage.setItem('refresh',msg.token.refresh)
+                localStorage.setItem('usuário',JSON.stringify(msg))
+               
 
-                route.push('/')
+                route.push('/dashboard')
 
             }
             if(resp.status !== 200){
@@ -47,7 +62,7 @@ export default function FormLogin (){
             }
         })
         .catch((error)=>{
-            
+            alert(`Não foi possivel conecta-se ao servidor, procure o suporte ou tente mais tarde`)
         })
 
 

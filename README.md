@@ -24,7 +24,10 @@ O **CondoPackage** foi criado para facilitar o gerenciamento de encomendas em co
 ## Funcionalidades Para Adicionar
 
 - Recaptcha nos formulários
+- Recuperação de Senha
 - Envio de notificação para criação de conta
+- Flash message para acões 
+
 
 
 
@@ -48,3 +51,13 @@ Contribuições são sempre bem-vindas! Sinta-se à vontade para abrir uma issue
 ## Autor
 
 Rodolfo Silva 🚀
+
+
+
+
+
+Task
+Verificar criação do token pós está com validade bugada
+Criar a função para chamar o refresh token e chamar no UseEffect
+
+
