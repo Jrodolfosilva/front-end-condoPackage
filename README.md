@@ -56,8 +56,5 @@ Rodolfo Silva 🚀
 
 
 
-Task
-Verificar criação do token pós está com validade bugada
-Criar a função para chamar o refresh token e chamar no UseEffect
 
 

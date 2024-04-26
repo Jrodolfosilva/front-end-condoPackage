@@ -2,7 +2,7 @@
 'use client'
 
 import { useContext } from "react"
-import { ContextUserConnected } from "../context/context-api"
+import { ContextUserConnected } from "./context/context-api"
 
 export default function DashboardPainel (){
 

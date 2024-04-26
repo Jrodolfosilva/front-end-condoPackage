@@ -1,5 +1,5 @@
 import SideBar from "../_components/sidebar/sidebar"
-import { ContextAPI } from "../context/context-api"
+import { ContextAPI } from "./context/context-api"
 import style from "./layout.module.css"
 
 export default function LayoutDash({children}:{children: React.ReactNode}){
