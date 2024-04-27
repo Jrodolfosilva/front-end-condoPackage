@@ -2,7 +2,8 @@
 
 import { useRouter } from "next/navigation";
 import {createContext,useEffect, useState } from "react";
-
+import load from "../../../../public/load.gif"
+import Image from "next/image";
 
 interface IUserData {
     msg:string,
@@ -37,8 +38,12 @@ useEffect(()=>{
         const dataUserInLocalStorage:string|null = localStorage.getItem('usuário') 
 
         if(!dataUserInLocalStorage){
-            setTimeout(()=>{route.push('/login')},5000)
-            alert("Você precisa fazer o login")
+            setTimeout(()=>{
+                alert("Você precisa fazer o login")
+                route.push('/login')
+            
+            },5000)
+            
             
             return
         }
@@ -108,10 +113,13 @@ useEffect(()=>{
 
 
 
-
     return(
         <ContextUserConnected.Provider value={user}>
-            {user?children:"Você não está autorizado!...."}
+            {user?
+            children: 
+            <div style={{height:"100vh", width:"100vw",display:"flex", flexDirection:"column", alignItems:"center",justifyContent:"center"}}>
+                <Image src='/load.gif'  width={300} height={150}  alt=""  style={{display:"block"}}       />
+            </div>}
         </ContextUserConnected.Provider>
     )
 }
