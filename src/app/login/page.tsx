@@ -7,7 +7,7 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form"
 
 
 interface IuserLogin {
-    name: string,
+    password: string,
     email: string,
     
 }
@@ -33,9 +33,9 @@ export default function FormLogin (){
       
 
     const route = useRouter() 
-    const { register, handleSubmit,formState} = useForm()
+    const { register, handleSubmit,formState} = useForm<IuserLogin>()
 
-    const submit:SubmitHandler<FieldValues |IuserLogin > = async(data)=>{
+    const submit:SubmitHandler<IuserLogin > = async(data)=>{
 
         await new Promise(Resolve=>setTimeout(Resolve,3000))
         console.log(data)

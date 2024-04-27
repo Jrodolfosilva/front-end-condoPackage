@@ -29,7 +29,7 @@ export function ContextAPI({children}:{children:React.ReactNode}){
     
 const route = useRouter()
 const [user, setUser] = useState<IUserData | null>(null)
-const [load,setLoad] = useState(true)
+
 
 useEffect(()=>{
 
@@ -56,7 +56,7 @@ useEffect(()=>{
         
             if(verifyTokenAccess.status === 200){
                 setUser(parseUserData)
-                setLoad(false)
+                
                 return
             }
 
@@ -79,14 +79,14 @@ useEffect(()=>{
 
                     localStorage.setItem('usuário',JSON.stringify(parseUserData))
                     setUser(parseUserData)
-                    setLoad(false)
+                    
 
                     console.log("O token foi revalidado e inserido no contexto e localstorage")
                 }
 
                 if(verifyTokenRefresh.status !== 200){
                     localStorage.removeItem("usuário")
-                    alert("Inatividade: Você precisar se Logar novamente")
+                    alert("Você precisar se Logar novamente")
                     route.push("/login")
                 }
 
@@ -111,7 +111,7 @@ useEffect(()=>{
 
     return(
         <ContextUserConnected.Provider value={user}>
-            {!load?children:"Você não está autorizado!...."}
+            {user?children:"Você não está autorizado!...."}
         </ContextUserConnected.Provider>
     )
 }
