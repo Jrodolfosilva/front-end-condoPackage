@@ -1,0 +1,84 @@
+.container_panel_dashboard{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin: 3rem ;   
+
+}
+
+
+.container_content_overview,.container_content_historic{
+    background-color: var(--color-white);
+    padding: 3rem;
+    border-radius: 0.8rem;
+   
+
+}
+
+
+.container_content_overview h2{
+    color: #000;
+    font-size: 2.4rem;
+}
+
+
+.container_content_overview ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+
+.container_content_overview ul li{
+    display: block;
+    width: 33.3%;
+    box-shadow: 1px 1px 10px #cccccc2c;
+    padding: 2.4rem ;
+    border: 0.1rem solid   #ededed;
+    border-radius: 0.4rem;
+}
+
+
+.container_content_overview ul li p,.container_content_overview ul li span {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+
+.container_content_overview ul li span {
+    
+    color: #858484;
+}
+
+
+.container_content_overview ul li h5{
+    margin: 0.8rem 0;
+    font-size: 1.8rem;
+}
+
+
+.container_content_historic div:first-child{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.container_content_historic div:first-child button{
+    padding: 1.4rem 4.2rem;
+    
+    background-color: transparent;
+    border: 0.1rem solid var(--color-blue);
+    border-radius: 0.8rem;
+    color: var(--color-blue);
+    cursor: pointer;
+    transition: .3s;
+}
+
+
+.container_content_historic div:first-child button:hover{
+    color: var(--color-white);
+    background-color: var(--color-blue);
+}

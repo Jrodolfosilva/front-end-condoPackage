@@ -38,13 +38,14 @@
 }
 
 
+
 /**/
 
-.container_sideBar nav ul li a:hover{
+.container_sideBar nav ul li a:hover,.container_sideBar nav ul li a[class="active"]{
     background-color: #2563DC;
     color: #fff;
 }
-.container_sideBar nav ul li a:hover svg path{
+.container_sideBar nav ul li a:hover svg path,.container_sideBar nav ul li a[class='active'] svg path{
     fill:#fff;
 }
 
