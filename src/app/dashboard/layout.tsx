@@ -10,13 +10,11 @@ export default function LayoutDash({children}:{children: React.ReactNode}){
         
         <ContextAPI>
             <div className={style.container_layout_dash}>
-            <SideBar/>
-            <div style={{flexGrow:1}}>   
-                <Header/>
-                <main>{children}</main>
-            </div>
-            
-            
+                <SideBar/>
+                <div style={{flexGrow:1}}>   
+                    <Header/>
+                    <main>{children}</main>
+                </div>
             </div>
         </ContextAPI>
        

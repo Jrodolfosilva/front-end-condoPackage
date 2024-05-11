@@ -14,9 +14,11 @@
     --color-blue-bg: #EEF2FC;
     --color-blue-title: #14367B;
     --color-black-title: #3D3D3D
-
+    --color-border: #dcdcdc;
     --color-red-bg:#FDF0EC;
     --color-red: #81290E;
+
+    list-style: none;
 }
 
 html{

@@ -2,7 +2,6 @@
 
 import { useRouter } from "next/navigation";
 import {createContext,useEffect, useState } from "react";
-import load from "../../../../public/load.gif"
 import Image from "next/image";
 
 interface IUserData {

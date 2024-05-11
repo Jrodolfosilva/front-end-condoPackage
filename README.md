@@ -58,3 +58,8 @@ Rodolfo Silva 🚀
 
 
 
+next task
+
+Criar a UI da página Home do dashboard
+Criar sistema de data fetching Home do Dashboard
+
